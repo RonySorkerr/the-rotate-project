@@ -17,30 +17,46 @@
     <main>
         <section class="bg-center bg-no-repeat bg-[red] p-10"
             style="background-image: url('https://www.mathsisfun.com/geometry/images/degrees-360.svg');">
-            <img id="rotimg" class="flex mx-auto p-4 bg-[#f5deb348] rounded-xl"
-                src="https://png.pngtree.com/png-vector/20220926/ourmid/pngtree-shiny-gold-star-clipart-illustration-design-png-image_6216956.png"
+            <img id="rotimg" class="flex mx-auto p-4 bg-[#f5deb348] rounded-full"
+                src="pngtree-shiny-gold-star-clipart-illustration-design-png-image_6216956.png"
                 alt="">
         </section>
         <section>
             <div class="flex mx-auto gap-20 justify-center mt-10">
-                <button class="btn btn-secondary">ROTATE BY 10&deg; </button>
-                <button class="btn btn-secondary">ROTATE BY 20&deg;</button>
-                <button class="btn btn-secondary">ROTATE BY 30&deg;</button>
-                <button class="btn btn-secondary">ROTATE BY 40&deg;</button>
-                <button class="btn btn-secondary">ROTATE BY 50&deg;</button>
-                <button class="btn btn-secondary">ROTATE BY 60</button>
-                <button class="btn btn-secondary">ROTATE BY 70</button>
-                <button class="btn btn-secondary">ROTATE BY 80</button>
-                <button class="btn btn-secondary">ROTATE BY 90</button>
+                <button class="btn btn-secondary">ROTATE BY <span id="deg">10</span>&deg; </button>
+                <button class="btn btn-secondary">ROTATE BY <span id="deg">20</span>&deg;</button>
+                <button class="btn btn-secondary">ROTATE BY <span id="deg">30</span>&deg;</button>
+                <button class="btn btn-secondary">ROTATE BY <span id="deg">40</span>&deg;</button>
+                <button class="btn btn-secondary">ROTATE BY <span id="deg">50</span>&deg;</button>
+                <button class="btn btn-secondary">ROTATE BY <span id="deg">60</span>&deg;</button>
+                <button class="btn btn-secondary">ROTATE BY <span id="deg">70</span>&deg;</button>
+                <button class="btn btn-secondary">ROTATE BY <span id="deg">80</span>&deg;</button>
+                <button class="btn btn-secondary">ROTATE BY <span id="deg">90</span>&deg;</button>
             </div>
+            <button id="reset">Reset</button>
 
         </section>
     </main>
     <footer>
         <section></section>
     </footer>
+    <script>
+        const allbtns = document.querySelectorAll('.btn');
+        const resetBtn = document.getElementById('reset')
+        const image = document.getElementById('rotimg');
+    
+        allbtns.forEach((btn, index) => {
+            btn.addEventListener('click', function() {
+                const degree = parseInt(btn.querySelector('span').innerText); // Extract degree from button
+                image.style.transform = `rotate(${degree}deg)`; // Rotate image
+            });
+        });
+        resetBtn.addEventListener('click', function(){
+            image.style.transform = 'rotate(0deg)'
+        })
+    </script>
 
-    <script src="script.js"></script>
+    <!-- <script src="script.js"></script> -->
 
 </body>
 
