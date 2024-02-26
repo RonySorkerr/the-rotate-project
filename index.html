@@ -7,23 +7,27 @@
     <!-- cdns -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
     <title>Make It Rotate</title>
 </head>
 
-<body>
+<body class="container mx-auto">
     <header>
         <section></section>
     </header>
-    <main>
-        <section class="bg-center bg-no-repeat bg-[red] p-10"
-            style="background-image: url('https://www.mathsisfun.com/geometry/images/degrees-360.svg');">
+    <main class="flex flex-col min-h-screen justify-center">
+        <section class="bg-contain bg-center bg-no-repeat bg-[#ffeded] p-10"
+            style="background-image: url('bg.png');">
             <img id="rotimg" class="flex mx-auto p-4 bg-[#f5deb348] rounded-full"
-                src="pngtree-shiny-gold-star-clipart-illustration-design-png-image_6216956.png"
-                alt="">
+                src="rotateImg.png" alt="">
         </section>
         <section>
-            <div class="flex mx-auto gap-20 justify-center mt-10">
-                <button class="btn btn-secondary">ROTATE BY <span id="deg">10</span>&deg; </button>
+            <!-- value display -->
+            <div class="text-center flex justify-center " id="valueDisplay">
+                <p class="pt-4 px-4 p-1 text-white text-xl hidden bg-[#ffeded]"></p>
+            </div>
+            <div id="btns" class="mt-10 grid grid-cols-3 md:grid-cols-6 lg:grid-cols-9 gap-5">
+                <button class="btn btn-secondary">ROTATE BY <span id="deg">10</span>&deg;</button>
                 <button class="btn btn-secondary">ROTATE BY <span id="deg">20</span>&deg;</button>
                 <button class="btn btn-secondary">ROTATE BY <span id="deg">30</span>&deg;</button>
                 <button class="btn btn-secondary">ROTATE BY <span id="deg">40</span>&deg;</button>
@@ -32,15 +36,44 @@
                 <button class="btn btn-secondary">ROTATE BY <span id="deg">70</span>&deg;</button>
                 <button class="btn btn-secondary">ROTATE BY <span id="deg">80</span>&deg;</button>
                 <button class="btn btn-secondary">ROTATE BY <span id="deg">90</span>&deg;</button>
+                <button class="btn btn-secondary">ROTATE BY <span id="deg">100</span>&deg;</button>
+                <button class="btn btn-secondary">ROTATE BY <span id="deg">110</span>&deg;</button>
+                <button class="btn btn-secondary">ROTATE BY <span id="deg">120</span>&deg;</button>
+                <button class="btn btn-secondary">ROTATE BY <span id="deg">130</span>&deg;</button>
+                <button class="btn btn-secondary">ROTATE BY <span id="deg">140</span>&deg;</button>
+                <button class="btn btn-secondary">ROTATE BY <span id="deg">150</span>&deg;</button>
+                <button class="btn btn-secondary">ROTATE BY <span id="deg">160</span>&deg;</button>
+                <button class="btn btn-secondary">ROTATE BY <span id="deg">170</span>&deg;</button>
+                <button class="btn btn-secondary">ROTATE BY <span id="deg">180</span>&deg;</button>
+                <button class="btn btn-secondary">ROTATE BY <span id="deg">190</span>&deg;</button>
+                <button class="btn btn-secondary">ROTATE BY <span id="deg">200</span>&deg;</button>
+                <button class="btn btn-secondary">ROTATE BY <span id="deg">210</span>&deg;</button>
+                <button class="btn btn-secondary">ROTATE BY <span id="deg">220</span>&deg;</button>
+                <button class="btn btn-secondary">ROTATE BY <span id="deg">230</span>&deg;</button>
+                <button class="btn btn-secondary">ROTATE BY <span id="deg">240</span>&deg;</button>
+                <button class="btn btn-secondary">ROTATE BY <span id="deg">250</span>&deg;</button>
+                <button class="btn btn-secondary">ROTATE BY <span id="deg">260</span>&deg;</button>
+                <button class="btn btn-secondary">ROTATE BY <span id="deg">270</span>&deg;</button>
+                <button class="btn btn-secondary">ROTATE BY <span id="deg">280</span>&deg;</button>
+                <button class="btn btn-secondary">ROTATE BY <span id="deg">290</span>&deg;</button>
+                <button class="btn btn-secondary">ROTATE BY <span id="deg">300</span>&deg;</button>
+                <button class="btn btn-secondary">ROTATE BY <span id="deg">310</span>&deg;</button>
+                <button class="btn btn-secondary">ROTATE BY <span id="deg">320</span>&deg;</button>
+                <button class="btn btn-secondary">ROTATE BY <span id="deg">330</span>&deg;</button>
+                <button class="btn btn-secondary">ROTATE BY <span id="deg">340</span>&deg;</button>
+                <button class="btn btn-secondary">ROTATE BY <span id="deg">350</span>&deg;</button>
+                <button class="btn btn-secondary">ROTATE BY <span id="deg">360</span>&deg;</button>
+
             </div>
-            <button id="reset">Reset</button>
+            <button class="btn flex mx-auto mt-10 border-cyan-600 btn-primary text-xl" id="reset">Reset</button>
 
         </section>
     </main>
     <footer>
         <section></section>
     </footer>
-    <script>
+
+    <!-- <script>
         const allbtns = document.querySelectorAll('.btn');
         const resetBtn = document.getElementById('reset')
         const image = document.getElementById('rotimg');
@@ -54,9 +87,9 @@
         resetBtn.addEventListener('click', function(){
             image.style.transform = 'rotate(0deg)'
         })
-    </script>
+    </script> -->
 
-    <!-- <script src="script.js"></script> -->
+    <script src="script.js"></script>
 
 </body>
 
